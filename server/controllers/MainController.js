@@ -93,6 +93,20 @@ class MainController {
         }
     }
 
+    static async deleteBusiness(req, res, next) {
+        try {
+            let business = await Business.findByPk(req.params.idBusiness)
+            if (!business) {
+                throw { name: "Cannot found a business with that ID" }
+            } else {
+                await business.destroy()
+                res.status(200).json({ message: `Business success to delete` })
+            }
+        } catch (error) {
+            next(error)
+        }
+    }
+
     static async getSearchBusinesses(req, res, next) {
         try {
             let { location, sort_by, limit, open_now, categories } = req.query
