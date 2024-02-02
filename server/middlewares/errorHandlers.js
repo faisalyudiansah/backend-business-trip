@@ -10,6 +10,10 @@ function errorHandler(error, req, res, next) {
             statusCode = 400
             message = error.errors[0].message
             break;
+        case 'Data not found':
+            statusCode = 404
+            message = error.name
+            break;
     }
     res.status(statusCode).json({ message })
 }
