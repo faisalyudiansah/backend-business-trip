@@ -6,6 +6,12 @@ class MainController {
     static async createBusiness(req, res, next) {
         try {
             let { Location: locationBusiness, Categories } = req.body
+            if (!locationBusiness) {
+                throw { name: "Location is required" }
+            }
+            if (!Categories || Categories.length === 0) {
+                throw { name: "Categories is required" }
+            }
             let result = await Business.create({
                 alias: req.body.alias,
                 name: req.body.name,
@@ -24,9 +30,55 @@ class MainController {
                 await BusinessCategory.create({
                     BusinessId: result.dataValues.id,
                     CategoryId: ctgId
-                });
+                })
             })
-            await Location.create({
+            let locationData = {
+                ...locationBusiness,
+                BusinessId: result.dataValues.id
+            }
+            await Location.create(locationData)
+            return res.status(201).json({ message: `${req.body.name} successfully created` })
+        } catch (error) {
+            next(error)
+        }
+    }
+
+    static async updateBusiness(req, res, next) {
+        try {
+            let { idBusiness } = req.params
+            let verifyBusiness = await Business.findByPk(idBusiness)
+            if(!verifyBusiness){
+                throw { name: "Cannot found a business with that ID" }
+            }
+            let { Location: locationBusiness, Categories } = req.body
+            if (!locationBusiness) {
+                throw { name: "Location is required" }
+            }
+            if (!Categories || Categories.length === 0) {
+                throw { name: "Categories is required" }
+            }
+            await Business.update({
+                alias: req.body.alias,
+                name: req.body.name,
+                image_url: req.body.image_url,
+                is_closed: req.body.is_closed,
+                url: req.body.url,
+                latitude: req.body.coordinates.latitude,
+                longitude: req.body.coordinates.longitude,
+                transactions: req.body.transactions,
+                price: req.body.price,
+                phone: req.body.phone,
+                display_phone: req.body.display_phone,
+                distance: null
+            }, { where: { id: idBusiness } })
+            await BusinessCategory.destroy({ where: { BusinessId: idBusiness } })
+            await Promise.all(Categories.map(async (ctgId) => {
+                await BusinessCategory.create({
+                    BusinessId: idBusiness,
+                    CategoryId: ctgId
+                })
+            }))
+            await Location.update({
                 address1: locationBusiness.address1,
                 address2: locationBusiness.address2,
                 address3: locationBusiness.address3,
@@ -34,9 +86,8 @@ class MainController {
                 zip_code: locationBusiness.zip_code,
                 country: locationBusiness.country,
                 state: locationBusiness.state,
-                BusinessId: result.dataValues.id,
-            })
-            return res.status(201).json({message: `${req.body.name} successfully created`})
+            }, { where: { BusinessId: idBusiness } })
+            return res.status(200).json({ message: `${req.body.name} has been updated` })
         } catch (error) {
             next(error)
         }
