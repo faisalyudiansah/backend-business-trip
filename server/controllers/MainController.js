@@ -69,7 +69,8 @@ class MainController {
                 price: req.body.price,
                 phone: req.body.phone,
                 display_phone: req.body.display_phone,
-                distance: null
+                distance: null,
+                updatedAt: new Date()
             }, { where: { id: idBusiness } })
             await BusinessCategory.destroy({ where: { BusinessId: idBusiness } })
             await Promise.all(Categories.map(async (ctgId) => {
@@ -86,6 +87,7 @@ class MainController {
                 zip_code: locationBusiness.zip_code,
                 country: locationBusiness.country,
                 state: locationBusiness.state,
+                updatedAt: new Date()
             }, { where: { BusinessId: idBusiness } })
             return res.status(200).json({ message: `${req.body.name} has been updated` })
         } catch (error) {

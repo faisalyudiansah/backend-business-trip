@@ -1,6 +1,4 @@
 function errorHandler(error, req, res, next) {
-    console.log(error)
-
     let statusCode = 500
     let message = 'Internal Server Error'
 
@@ -16,6 +14,22 @@ function errorHandler(error, req, res, next) {
             break
         case "Location is required":
             statusCode = 400
+            message = error.name
+            break
+        case "Email is required":
+            statusCode = 400
+            message = error.name
+            break
+        case "Password is required":
+            statusCode = 400
+            message = error.name
+            break
+        case "Invalid Token":
+            statusCode = 401
+            message = error.name
+            break
+        case "Invalid email/password":
+            statusCode = 401
             message = error.name
             break
         case 'Data not found':

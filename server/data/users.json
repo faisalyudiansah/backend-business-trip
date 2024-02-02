@@ -1,0 +1,12 @@
+[
+    {
+        "name": "Cristiano Ronaldo",
+        "email": "ronaldo@gmail.com",
+        "password": "$2a$10$F5p6bN3d9RsHutStPEuvaeZL0hf1UleGdoBajiRICZxhxeiC9kgb6"
+    },
+    {
+        "name": "Lionel Messi",
+        "email": "messi@gmail.com",
+        "password": "$2a$10$e7KrVpdOwPwlWRK9ceCX3.euEUuOVAArcEPRT2Z4QGcKKj4Of6qLe"
+    }
+]
