@@ -1,13 +1,51 @@
-const { Business, Location, Category, Sequelize } = require("../models")
+const { Business, Location, Category, BusinessCategory, Sequelize } = require("../models")
 const calculateDistance = require("../helpers/calculateDistance")
 const createDisplayAddress = require("../helpers/createDisplayAddress")
 
 class MainController {
-    static async getBusinesses(req, res, next) {
+    static async createBusiness(req, res, next) {
+        try {
+            let { Location: locationBusiness, Categories } = req.body
+            let result = await Business.create({
+                alias: req.body.alias,
+                name: req.body.name,
+                image_url: req.body.image_url,
+                is_closed: req.body.is_closed,
+                url: req.body.url,
+                latitude: req.body.coordinates.latitude,
+                longitude: req.body.coordinates.longitude,
+                transactions: req.body.transactions,
+                price: req.body.price,
+                phone: req.body.phone,
+                display_phone: req.body.display_phone,
+                distance: null
+            })
+            Categories.forEach(async (ctgId) => {
+                await BusinessCategory.create({
+                    BusinessId: result.dataValues.id,
+                    CategoryId: ctgId
+                });
+            })
+            await Location.create({
+                address1: locationBusiness.address1,
+                address2: locationBusiness.address2,
+                address3: locationBusiness.address3,
+                city: locationBusiness.city,
+                zip_code: locationBusiness.zip_code,
+                country: locationBusiness.country,
+                state: locationBusiness.state,
+                BusinessId: result.dataValues.id,
+            })
+            return res.status(201).json({message: `${req.body.name} successfully created`})
+        } catch (error) {
+            next(error)
+        }
+    }
+
+    static async getSearchBusinesses(req, res, next) {
         try {
             let { location, sort_by, limit, open_now, categories } = req.query
             let queryOptions = MainController.buildQueryOptions({ location, open_now, categories })
-
             let businesses = await Business.findAll({
                 include: [
                     {
@@ -54,7 +92,6 @@ class MainController {
             category: {},
             location: {}
         }
-
         if (location) {
             queryOptions.location = {
                 city: {
@@ -62,7 +99,6 @@ class MainController {
                 }
             }
         }
-
         if (categories) {
             queryOptions.category = {
                 title: {
@@ -70,7 +106,6 @@ class MainController {
                 }
             }
         }
-
         if (open_now !== undefined) {
             if (open_now.toLowerCase() === 'true') {
                 queryOptions.business.is_closed = false
@@ -78,7 +113,6 @@ class MainController {
                 queryOptions.business.is_closed = true
             }
         }
-
         return queryOptions
     }
 
@@ -90,10 +124,8 @@ class MainController {
                 business.latitude,
                 business.longitude
             )
-
             let display_address = createDisplayAddress(business.Location.dataValues)
             business.distance = Number(distance.toFixed(5))
-
             business.dataValues.coordinates = {
                 latitude: business.latitude,
                 longitude: business.longitude
