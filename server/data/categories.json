@@ -1,0 +1,26 @@
+[
+    {
+        "alias": "newamerican",
+        "title": "New American"
+    },
+    {
+        "alias": "french",
+        "title": "French"
+    },
+    {
+        "alias": "cocktailbars",
+        "title": "Cocktail Bars"
+    },
+    {
+        "alias": "pizza",
+        "title": "Pizza"
+    },
+    {
+        "alias": "italian",
+        "title": "Italian"
+    },
+    {
+        "alias": "seafood",
+        "title": "Seafood"
+    }
+]

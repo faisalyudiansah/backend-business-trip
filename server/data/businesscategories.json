@@ -1,0 +1,46 @@
+[
+    {
+        "BusinessId": 1,
+        "CategoryId": 1
+    },
+    {
+        "BusinessId": 1,
+        "CategoryId": 2
+    },
+    {
+        "BusinessId": 1,
+        "CategoryId": 3
+    },
+    {
+        "BusinessId": 2,
+        "CategoryId": 4
+    },
+    {
+        "BusinessId": 3,
+        "CategoryId": 4
+    },
+    {
+        "BusinessId": 3,
+        "CategoryId": 5
+    },
+    {
+        "BusinessId": 3,
+        "CategoryId": 3
+    },
+    {
+        "BusinessId": 4,
+        "CategoryId": 5
+    },
+    {
+        "BusinessId": 4,
+        "CategoryId": 4
+    },
+    {
+        "BusinessId": 5,
+        "CategoryId": 1
+    },
+    {
+        "BusinessId": 5,
+        "CategoryId": 6
+    }
+]

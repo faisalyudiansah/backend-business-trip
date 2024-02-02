@@ -1,0 +1,93 @@
+[
+    {
+        "alias": "eleven-madison-park-new-york",
+        "name": "Eleven Madison Park",
+        "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/s_H7gm_Hwmz--O6bo1iU-A/o.jpg",
+        "is_closed": true,
+        "url": "https://www.yelp.com/biz/eleven-madison-park-new-york?adjust_creative=DSj6I8qbyHf-Zm2fGExuug&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=DSj6I8qbyHf-Zm2fGExuug",
+        "review_count": 2477,
+        "rating": 3.5,
+        "latitude": 40.7416907417333,
+        "longitude": -73.9872074872255,
+        "transactions": [
+            "pickup"
+        ],
+        "price": "$$$$",
+        "phone": "+12128890905",
+        "display_phone": "(212) 889-0905",
+        "distance": null
+    },
+    {
+        "alias": "julianas-brooklyn-3",
+        "name": "Juliana's",
+        "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/od36nFW220aMFAnNP00ocw/o.jpg",
+        "is_closed": false,
+        "url": "https://www.yelp.com/biz/julianas-brooklyn-3?adjust_creative=DSj6I8qbyHf-Zm2fGExuug&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=DSj6I8qbyHf-Zm2fGExuug",
+        "review_count": 2747,
+        "rating": 4.0,
+        "latitude": 40.70274718768062,
+        "longitude": -73.99343490196397,
+        "transactions": [
+            "delivery"
+        ],
+        "price": "$$",
+        "phone": "+17185966700",
+        "display_phone": "(718) 596-6700",
+        "distance": null
+    },
+    {
+        "alias": "olio-e-più-new-york-7",
+        "name": "Olio e Più",
+        "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/CUpPgz_Q4QBHxxxxDJJTTA/o.jpg",
+        "is_closed": true,
+        "url": "https://www.yelp.com/biz/olio-e-pi%C3%B9-new-york-7?adjust_creative=DSj6I8qbyHf-Zm2fGExuug&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=DSj6I8qbyHf-Zm2fGExuug",
+        "review_count": 5260,
+        "rating": 4.5,
+        "latitude": 40.733798036104304,
+        "longitude": -73.99977392649927,
+        "transactions": [
+            "delivery",
+            "pickup"
+        ],
+        "price": "$$$",
+        "phone": "+12122436546",
+        "display_phone": "(212) 243-6546",
+        "distance": null
+    },
+    {
+        "alias": "rubirosa-new-york-2",
+        "name": "Rubirosa",
+        "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/l0Phrnhhj78RFiDhLIOUyQ/o.jpg",
+        "is_closed": false,
+        "url": "https://www.yelp.com/biz/rubirosa-new-york-2?adjust_creative=DSj6I8qbyHf-Zm2fGExuug&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=DSj6I8qbyHf-Zm2fGExuug",
+        "review_count": 3269,
+        "rating": 4.1,
+        "latitude": 40.722766,
+        "longitude": -73.996233,
+        "transactions": [
+            "pickup"
+        ],
+        "price": "$$",
+        "phone": "+12129650500",
+        "display_phone": "(212) 965-0500",
+        "distance": null
+    },
+    {
+        "alias": "gordon-ramsay-hells-kitchen-las-vegas-las-vegas",
+        "name": "Gordon Ramsay Hell's Kitchen - Las Vegas",
+        "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/q771KjLzI5y638leJsnJnQ/o.jpg",
+        "is_closed": false,
+        "url": "https://www.yelp.com/biz/gordon-ramsay-hells-kitchen-las-vegas-las-vegas?adjust_creative=DSj6I8qbyHf-Zm2fGExuug&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=DSj6I8qbyHf-Zm2fGExuug",
+        "review_count": 10988,
+        "rating": 4.2,
+        "latitude": 36.11611867,
+        "longitude": -115.17645117,
+        "transactions": [
+            "delivery"
+        ],
+        "price": "$",
+        "phone": "+17027317373",
+        "display_phone": "(702) 731-7373",
+        "distance": null
+    }
+]

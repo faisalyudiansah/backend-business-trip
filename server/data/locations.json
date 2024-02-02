@@ -1,0 +1,52 @@
+[
+    {
+        "address1": "11 Madison Ave",
+        "address2": "",
+        "address3": "",
+        "city": "New York",
+        "zip_code": "10010",
+        "country": "US",
+        "state": "NY",
+        "BusinessId": 1
+    },
+    {
+        "address1": "19 Old Fulton St",
+        "address2": "",
+        "address3": "",
+        "city": "Brooklyn",
+        "zip_code": "11201",
+        "country": "US",
+        "state": "NY",
+        "BusinessId": 2
+    },
+    {
+        "address1": "3 Greenwich Ave",
+        "address2": "",
+        "address3": "",
+        "city": "New York",
+        "zip_code": "10014",
+        "country": "US",
+        "state": "NY",
+        "BusinessId": 3
+    },
+    {
+        "address1": "235 Mulberry St",
+        "address2": "",
+        "address3": "",
+        "city": "New York",
+        "zip_code": "10012",
+        "country": "US",
+        "state": "NY",
+        "BusinessId": 4
+    },
+    {
+        "address1": "3570 Las Vegas Blvd S",
+        "address2": "",
+        "address3": null,
+        "city": "Las Vegas",
+        "zip_code": "89109",
+        "country": "US",
+        "state": "NV",
+        "BusinessId": 5
+    }
+]
